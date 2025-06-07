@@ -29,7 +29,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "https://ecommerce-orcin-alpha-94.vercel.app/",
+    origin: "https://ecommerce-bhl8if0xz-thankgods-projects-847f45b1.vercel.app",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
