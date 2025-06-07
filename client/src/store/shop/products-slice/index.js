@@ -20,7 +20,7 @@ export const fetchAllFilteredProducts = createAsyncThunk(
     });
 
     const result = await axios.get(
-      `${API_BASE_URL}/api/shop/products/get?${query}`
+      `${API_BASE_URL}/shop/products/get?${query}`
     );
 
     console.log(result);
@@ -32,9 +32,7 @@ export const fetchAllFilteredProducts = createAsyncThunk(
 export const fetchProductDetails = createAsyncThunk(
   "/products/fetchProductDetails",
   async (id) => {
-    const result = await axios.get(
-      `${API_BASE_URL}/api/shop/products/get/${id}`
-    );
+    const result = await axios.get(`${API_BASE_URL}/shop/products/get/${id}`);
 
     return result?.data;
   }
