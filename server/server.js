@@ -27,9 +27,22 @@ mongoose
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const allowedOrigins = [
+  "https://ecommercecom-nine.vercel.app",
+  "https://ecommercecom-git-main-thankgods-projects-847f45b1.vercel.app",
+  "https://ecommerce-o5w67ji34-thankgods-projects-847f45b1.vercel.app",
+  "http://localhost:5173", // for local dev (optional)
+];
+
 app.use(
   cors({
-    origin: "https://ecommercecom-nine.vercel.app",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
@@ -41,6 +54,7 @@ app.use(
     credentials: true,
   })
 );
+
 
 app.use(cookieParser());
 app.use(express.json());
