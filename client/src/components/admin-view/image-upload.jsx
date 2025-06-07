@@ -6,6 +6,8 @@ import { Button } from "../ui/button";
 import axios from "axios";
 import { Skeleton } from "../ui/skeleton";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 function ProductImageUpload({
   imageFile,
   setImageFile,
@@ -50,7 +52,7 @@ function ProductImageUpload({
     const data = new FormData();
     data.append("my_file", imageFile);
     const response = await axios.post(
-      "http://localhost:5000/api/admin/products/upload-image",
+      `${API_BASE_URL}/admin/products/upload-image`,
       data
     );
     console.log(response, "response");
@@ -67,7 +69,7 @@ function ProductImageUpload({
 
   return (
     <div
-      className={`w-full  mt-4 ${isCustomStyling ? "" : "max-w-md mx-auto"}`}
+      className={`w-full mt-4 ${isCustomStyling ? "" : "max-w-md mx-auto"}`}
     >
       <Label className="text-lg font-semibold mb-2 block">Upload Image</Label>
       <div

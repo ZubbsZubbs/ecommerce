@@ -50,7 +50,7 @@ const createOrder = async (req, res) => {
       email: req.user.email, // Assuming user's email is available
       amount: totalAmount * 100, // Paystack requires amount in kobo
       metadata: metadata,
-      callback_url: `http://localhost:5173/shop/paystack-return`, // Update with your Paystack return URL
+      callback_url: `https://ecommerce-orcin-alpha-94.vercel.app/shop/paystack-return`, // Update with your Paystack return URL
     };
 
     paystack.transaction.initialize(paystackData, (error, body) => {
