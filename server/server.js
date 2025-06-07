@@ -30,7 +30,7 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   "https://ecommercecom-nine.vercel.app",
   "https://ecommercecom-git-main-thankgods-projects-847f45b1.vercel.app",
-  "https://ecommerce-ar8zk7bmg-thankgods-projects-847f45b1.vercel.app",
+  "https://ecommerce-dgtet65ac-thankgods-projects-847f45b1.vercel.app",
   "http://localhost:5173", // for local dev (optional)
 ];
 
@@ -54,7 +54,6 @@ app.use(
     credentials: true,
   })
 );
-
 
 app.use(cookieParser());
 app.use(express.json());
